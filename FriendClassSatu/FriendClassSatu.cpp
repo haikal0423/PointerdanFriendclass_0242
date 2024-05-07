@@ -4,20 +4,25 @@ using namespace std;
 class siswa;
 class orang
 {
-    private:
-	string nama;
+private:
+    string nama;
 
-    public:
+public:
     void setNama(string pNama);
-    friend class mahasiswa;
+    friend class siswa;
 };
 
 class siswa
 {
-    private:
+private:
     int id;
 
-    public:
+public:
     void setId(int pId);
-    void displayAll(orang &a);
+    void displayAll(orang& a);
 };
+
+void siswa::displayAll(orang& a)
+{
+    cout << id << endl << a.nama;
+}
